@@ -8,7 +8,7 @@ import javax.persistence.Convert;
 import org.hibernate.annotations.Type;
 
 import com.project.dvdrental.entity.LanguageEntity;
-import com.project.dvdrental.entity.Rating;
+import com.project.dvdrental.entity.Mpaa_rating;
 import com.project.dvdrental.entity.RatingConvert;
 
 public class FilmDto {

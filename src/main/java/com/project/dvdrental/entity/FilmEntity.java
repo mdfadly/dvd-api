@@ -62,7 +62,7 @@ public class FilmEntity implements Serializable{
 //	@Type(type = "com.project.dvdrental.converter.EnumTypePostgreSql")
 	@Column(name = "rating", columnDefinition = "mpaa_rating")
 	@Convert(converter = EnumTypePostgreSql.class)
-	private Rating rating;
+	private Mpaa_rating rating;
 	
 	@Column(name = "last_update")
 	private Date lastUpdate;
@@ -81,7 +81,7 @@ public class FilmEntity implements Serializable{
 	
 
 	public FilmEntity(Integer filmId, String title, String description, Year releaseYear, LanguageEntity languageId,
-			Integer rentalDuration, Double rentalRate, Integer length, Double replacementCost, Rating rating,
+			Integer rentalDuration, Double rentalRate, Integer length, Double replacementCost, Mpaa_rating rating,
 			Date lastUpdate, String[] specialFeature) {
 		super();
 		this.filmId = filmId;
@@ -175,13 +175,13 @@ public class FilmEntity implements Serializable{
 
 	
 
-	public Rating getRating() {
+	public Mpaa_rating getRating() {
 		return rating;
 	}
 
 
 
-	public void setRating(Rating rating) {
+	public void setRating(Mpaa_rating rating) {
 		this.rating = rating;
 	}
 

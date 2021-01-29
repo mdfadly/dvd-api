@@ -4,9 +4,9 @@ import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 
 @Converter
-public class RatingConvert implements AttributeConverter<Rating, String>{
+public class RatingConvert implements AttributeConverter<Mpaa_rating, String>{
 	@Override
-	public String convertToDatabaseColumn(Rating attribute) {
+	public String convertToDatabaseColumn(Mpaa_rating attribute) {
 		// TODO Auto-generated method stub
 		if (attribute == null)
             return null;
@@ -27,21 +27,21 @@ public class RatingConvert implements AttributeConverter<Rating, String>{
         }
 	}
 	@Override
-	public Rating convertToEntityAttribute(String dbData) {
+	public Mpaa_rating convertToEntityAttribute(String dbData) {
 		// TODO Auto-generated method stub
 		if (dbData == null)
             return null;
         switch (dbData) {
         case "G":
-            return Rating.G;
+            return Mpaa_rating.G;
         case "PG":
-            return Rating.PG;
+            return Mpaa_rating.PG;
         case "PG-13":
-            return Rating.PG13;
+            return Mpaa_rating.PG13;
         case "R":
-            return Rating.R;
+            return Mpaa_rating.R;
         case "NC-17":
-            return Rating.NC17;
+            return Mpaa_rating.NC17;
         default:
             throw new IllegalArgumentException(dbData + " not supported.");
         }

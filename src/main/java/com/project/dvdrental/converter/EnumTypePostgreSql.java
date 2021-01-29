@@ -10,16 +10,16 @@ import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.type.EnumType;
 
-import com.project.dvdrental.entity.Rating;
+import com.project.dvdrental.entity.Mpaa_rating;
 
-public class EnumTypePostgreSql extends EnumType implements AttributeConverter<Rating,String>{
+public class EnumTypePostgreSql extends EnumType implements AttributeConverter<Mpaa_rating,String>{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
 	@Override
-	public String convertToDatabaseColumn(Rating attribute) {
+	public String convertToDatabaseColumn(Mpaa_rating attribute) {
 		// TODO Auto-generated method stub
 		if (attribute == null)
             return null;
@@ -41,21 +41,21 @@ public class EnumTypePostgreSql extends EnumType implements AttributeConverter<R
 	}
 
 	@Override
-	public Rating convertToEntityAttribute(String dbData) {
+	public Mpaa_rating convertToEntityAttribute(String dbData) {
 		// TODO Auto-generated method stub
 		if (dbData == null)
             return null;
         switch (dbData) {
         case "G":
-            return Rating.G;
+            return Mpaa_rating.G;
         case "PG":
-            return Rating.PG;
+            return Mpaa_rating.PG;
         case "PG-13":
-            return Rating.PG13;
+            return Mpaa_rating.PG13;
         case "R":
-            return Rating.R;
+            return Mpaa_rating.R;
         case "NC-17":
-            return Rating.NC17;
+            return Mpaa_rating.NC17;
         default:
             throw new IllegalArgumentException(dbData + " not supported.");
         }

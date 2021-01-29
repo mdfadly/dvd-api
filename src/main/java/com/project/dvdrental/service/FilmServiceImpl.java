@@ -1,6 +1,7 @@
 package com.project.dvdrental.service;
 
 import java.time.Year;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.project.dvdrental.dto.FilmDto;
 import com.project.dvdrental.entity.FilmEntity;
 import com.project.dvdrental.entity.LanguageEntity;
-import com.project.dvdrental.entity.Rating;
+import com.project.dvdrental.entity.Mpaa_rating;
 import com.project.dvdrental.repository.FilmRepository;
 import com.project.dvdrental.repository.LanguageRepository;
 
@@ -61,9 +62,12 @@ public class FilmServiceImpl implements FilmService{
 		filmEntity.setRentalRate(dto.getRentalRate());
 		filmEntity.setLength(dto.getLength());
 		filmEntity.setReplacementCost(dto.getReplacementCost());
-		filmEntity.setRating(Rating.valueOf(dto.getRating()));
+		filmEntity.setRating(Mpaa_rating.valueOf(dto.getRating()));
 		filmEntity.setSpecialFeature(dto.getSpecialFeature());
+		Date date = new Date();
+		filmEntity.setLastUpdate(date);
 //		filmEntity.setFullText(dto.getFullText());
+		
 		
 		repo.save(filmEntity);
 		return filmEntity;
@@ -84,8 +88,10 @@ public class FilmServiceImpl implements FilmService{
 		filmEntity.setRentalRate(dto.getRentalRate());
 		filmEntity.setLength(dto.getLength());
 		filmEntity.setReplacementCost(dto.getReplacementCost());
-		filmEntity.setRating(Rating.valueOf(dto.getRating()));
+		filmEntity.setRating(Mpaa_rating.valueOf(dto.getRating()));
 		filmEntity.setSpecialFeature(dto.getSpecialFeature());
+		Date date = new Date();
+		filmEntity.setLastUpdate(date);
 //		filmEntity.setFullText(dto.getFullText());
 		
 		repo.save(filmEntity);

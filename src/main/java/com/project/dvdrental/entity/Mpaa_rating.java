@@ -1,6 +1,6 @@
 package com.project.dvdrental.entity;
 
-public enum Rating {
+public enum Mpaa_rating {
 	
 	G("G"),
     PG("PG"),
@@ -9,7 +9,7 @@ public enum Rating {
     NC17("NC-17");
 	private String displayName;
 
-	Rating(String displayName) {
+	Mpaa_rating(String displayName) {
         this.displayName = displayName;
     }
 
