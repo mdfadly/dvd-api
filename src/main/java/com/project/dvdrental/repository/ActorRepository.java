@@ -15,6 +15,7 @@ public interface ActorRepository extends JpaRepository<ActorEntity, Integer> {
 	List<ActorEntity> findByFirstNameIgnoreCase(String first_name);
 	List<ActorEntity> findByLastNameIgnoreCase(String last_name);
 	List<ActorEntity> findByLastUpdate(Date last_update);
+	List<ActorEntity> findByOrderByActorIdAsc();
 	
 //	List<ActorEntity> findByFirstNameIgnoreCaseLikeOrLastNameIgnoreCaseLike(String b, String c);
 	List<ActorEntity> findByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCase(String b, String c);

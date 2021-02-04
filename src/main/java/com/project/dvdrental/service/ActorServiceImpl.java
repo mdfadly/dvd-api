@@ -22,7 +22,7 @@ public class ActorServiceImpl implements ActorService {
 	@Override
 	public List<ActorEntity> getAll() {
 		// TODO Auto-generated method stub
-		List<ActorEntity> actorEntities = repo.findAll();
+		List<ActorEntity> actorEntities = repo.findByOrderByActorIdAsc();
 		return actorEntities;
 	}
 	
