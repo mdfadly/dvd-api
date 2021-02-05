@@ -14,7 +14,7 @@ import com.project.dvdrental.repository.LanguageRepository;
 
 @RestController
 @RequestMapping("/api")
-//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 public class LanguageController {
 	
 	@Autowired
