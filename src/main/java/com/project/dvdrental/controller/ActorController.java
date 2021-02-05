@@ -26,7 +26,7 @@ import com.project.dvdrental.service.ActorServiceImpl;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
 public class ActorController {
 	
 	@Autowired
