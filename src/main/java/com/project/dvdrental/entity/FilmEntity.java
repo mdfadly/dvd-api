@@ -38,7 +38,7 @@ public class FilmEntity implements Serializable{
 	@Column(name = "description")
 	private String description;
 	
-	@Column(name = "release_year", columnDefinition = "Year")
+	@Column(name = "release_year", columnDefinition = "integer")
 	@Convert(converter = YearConvert.class)
 	private Year releaseYear;
 	
@@ -46,22 +46,22 @@ public class FilmEntity implements Serializable{
 	@JoinColumn(name = "language_id", referencedColumnName = "language_id")
 	private LanguageEntity languageId;
 	
-	@Column(name = "rental_duration")
+	@Column(name = "rental_duration", columnDefinition = "integer default 3")
 	private Integer rentalDuration;
 	
-	@Column(name = "rental_rate")
+	@Column(name = "rental_rate", columnDefinition = "numeric default 4.99")
 	private Double rentalRate;
 	
 	@Column(name = "length")
 	private Integer length;
 	
-	@Column(name = "replacement_cost")
+	@Column(name = "replacement_cost", columnDefinition = "numeric default 19.99")
 	private Double replacementCost;
 	
-//	@Enumerated(EnumType.STRING)
 //	@Type(type = "com.project.dvdrental.converter.EnumTypePostgreSql")
-	@Column(name = "rating", columnDefinition = "mpaa_rating")
+//	@Enumerated(EnumType.STRING)
 	@Convert(converter = EnumTypePostgreSql.class)
+	@Column(name = "rating", columnDefinition = "varchar")
 	private Mpaa_rating rating;
 	
 	@Column(name = "last_update")
